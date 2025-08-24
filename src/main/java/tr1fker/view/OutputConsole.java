@@ -19,4 +19,12 @@ public class OutputConsole {
     public void printSuccessExit(){
         System.out.println("Программа успешно завершена!");
     }
+
+    public void printIName(){
+        System.out.print("Введите имя:");
+    }
+
+    public void printIPhone(){
+        System.out.print("Введите телефон:");
+    }
 }
