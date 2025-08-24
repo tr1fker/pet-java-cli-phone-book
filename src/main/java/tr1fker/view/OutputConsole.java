@@ -1,5 +1,9 @@
 package tr1fker.view;
 
+import tr1fker.model.Record;
+
+import java.util.List;
+
 public class OutputConsole {
     public void printCustomMenu(){
         System.out.println("""
@@ -26,5 +30,12 @@ public class OutputConsole {
 
     public void printIPhone(){
         System.out.print("Введите телефон:");
+    }
+
+    public void printRecords(List<Record> records){
+        System.out.println("Список контактов:");
+        for (Record record : records) {
+            System.out.println("№" + record.getId() + " Имя:" + record.getName() + " Телефон:" + record.getPhone());
+        }
     }
 }

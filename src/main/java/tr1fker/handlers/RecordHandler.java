@@ -16,6 +16,10 @@ public class RecordHandler {
         this.count = 0;
     }
 
+    public List<Record> getRecords(){
+        return this.records;
+    }
+
     public void addRecord(String name, String phone){
         this.records.add(new Record(name, phone, ++this.count));
     }
