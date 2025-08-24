@@ -34,6 +34,7 @@ public class UIHandler {
                     this.createRecord();
                     break;
                 case 2:
+                    this.showRecords();
                     break;
                 case 3:
                     break;
@@ -57,6 +58,10 @@ public class UIHandler {
         this.outputConsole.printIPhone();
         String phone = inputHandler.inputString();
         recordHandler.addRecord(name, phone);
+    }
+
+    public void showRecords(){
+        this.outputConsole.printRecords(this.recordHandler.getRecords());
     }
 
     public void stopConsole(){
