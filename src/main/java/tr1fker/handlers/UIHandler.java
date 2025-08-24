@@ -1,16 +1,19 @@
 package tr1fker.handlers;
 
+import tr1fker.model.Record;
 import tr1fker.view.OutputConsole;
 
 public class UIHandler {
     private InputHandler inputHandler;
+    private RecordHandler recordHandler;
 
     private OutputConsole outputConsole;
 
     private boolean isRunning;
 
-    public UIHandler(InputHandler inputHandler) {
+    public UIHandler(InputHandler inputHandler, RecordHandler recordHandler) {
         this.inputHandler = inputHandler;
+        this.recordHandler = recordHandler;
 
         this.outputConsole = new OutputConsole();
 
@@ -28,6 +31,7 @@ public class UIHandler {
 
             switch(option){
                 case 1:
+                    this.createRecord();
                     break;
                 case 2:
                     break;
@@ -46,6 +50,14 @@ public class UIHandler {
         outputConsole.printSuccessExit();
     }
 
+
+    public void createRecord(){
+        this.outputConsole.printIName();
+        String name = inputHandler.inputString();
+        this.outputConsole.printIPhone();
+        String phone = inputHandler.inputString();
+        recordHandler.addRecord(name, phone);
+    }
 
     public void stopConsole(){
         this.isRunning = false;
