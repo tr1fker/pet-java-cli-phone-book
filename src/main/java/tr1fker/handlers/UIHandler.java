@@ -41,6 +41,7 @@ public class UIHandler {
                 case 4:
                     break;
                 case 5:
+                    this.removeRecord();
                     break;
                 case 6:
                     this.stopConsole();
@@ -62,6 +63,13 @@ public class UIHandler {
 
     public void showRecords(){
         this.outputConsole.printRecords(this.recordHandler.getRecords());
+    }
+
+    public void removeRecord(){
+        this.outputConsole.printINameDelete();
+        String name = inputHandler.inputString();
+        this.recordHandler.removeRecord(name);
+        this.outputConsole.printSuccessRecordDelete();
     }
 
     public void stopConsole(){
