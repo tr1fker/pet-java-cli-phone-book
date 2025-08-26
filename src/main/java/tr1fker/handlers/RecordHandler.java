@@ -46,6 +46,15 @@ public class RecordHandler {
         return null;
     }
 
+    public void setPhoneByName(String name, String phone){
+        for (Record record : this.records){
+            if (record.getName().equals(name)){
+                record.setPhone(phone);
+                break;
+            }
+        }
+    }
+
     public void loadRecords(){
         this.records = this.gsonHandler.loadRecords();
         for (Record record : this.records) {
