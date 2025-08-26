@@ -40,6 +40,7 @@ public class UIHandler {
                     this.searchRecordByName();
                     break;
                 case 4:
+                    this.editRecord();
                     break;
                 case 5:
                     this.removeRecord();
@@ -64,6 +65,15 @@ public class UIHandler {
 
     public void showRecords(){
         this.outputConsole.printRecords(this.recordHandler.getRecords());
+    }
+
+    public void editRecord(){
+        this.outputConsole.printIName();
+        String name = inputHandler.inputString();
+        this.outputConsole.printIPhone();
+        String phone = inputHandler.inputString();
+        this.recordHandler.setPhoneByName(name, phone);
+        this.outputConsole.printSuccesRecordEdit();
     }
 
     public void removeRecord(){
