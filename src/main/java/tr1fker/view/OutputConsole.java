@@ -38,4 +38,12 @@ public class OutputConsole {
             System.out.println("№" + record.getId() + " Имя:" + record.getName() + " Телефон:" + record.getPhone());
         }
     }
+
+    public void printINameDelete(){
+        System.out.print("Введите имя для удаления:");
+    }
+
+    public void printSuccessRecordDelete(){
+        System.out.println("Запись успешно удалена!");
+    }
 }
