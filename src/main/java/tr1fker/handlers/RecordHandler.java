@@ -28,6 +28,15 @@ public class RecordHandler {
         this.records.add(new Record(name, phone, ++this.count));
     }
 
+    public void removeRecord(String name){
+        for (Record record : this.records) {
+            if (record.getName().equals(name)){
+                this.records.remove(record);
+                break;
+            }
+        }
+    }
+
     public void loadRecords(){
         this.records = this.gsonHandler.loadRecords();
         for (Record record : this.records) {
