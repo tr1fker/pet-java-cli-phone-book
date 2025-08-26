@@ -37,6 +37,15 @@ public class RecordHandler {
         }
     }
 
+    public Record searchRecordByName(String name){
+        for (Record record : this.records){
+            if (record.getName().equals(name)){
+                return record;
+            }
+        }
+        return null;
+    }
+
     public void loadRecords(){
         this.records = this.gsonHandler.loadRecords();
         for (Record record : this.records) {
