@@ -35,7 +35,7 @@ public class OutputConsole {
     public void printRecords(List<Record> records){
         System.out.println("Список контактов:");
         for (Record record : records) {
-            System.out.println("№" + record.getId() + " Имя:" + record.getName() + " Телефон:" + record.getPhone());
+            this.printRecord(record);
         }
     }
 
@@ -45,5 +45,9 @@ public class OutputConsole {
 
     public void printSuccessRecordDelete(){
         System.out.println("Запись успешно удалена!");
+    }
+
+    public void printRecord(Record record){
+        System.out.println("№" + record.getId() + " Имя:" + record.getName() + " Телефон:" + record.getPhone());
     }
 }
