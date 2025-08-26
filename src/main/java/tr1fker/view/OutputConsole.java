@@ -50,4 +50,8 @@ public class OutputConsole {
     public void printRecord(Record record){
         System.out.println("№" + record.getId() + " Имя:" + record.getName() + " Телефон:" + record.getPhone());
     }
+
+    public void printSuccesRecordEdit(){
+        System.out.println("Запись успешно отредактирована!");
+    }
 }
