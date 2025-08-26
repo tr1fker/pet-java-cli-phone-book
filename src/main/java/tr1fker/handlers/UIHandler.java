@@ -37,6 +37,7 @@ public class UIHandler {
                     this.showRecords();
                     break;
                 case 3:
+                    this.searchRecordByName();
                     break;
                 case 4:
                     break;
@@ -70,6 +71,13 @@ public class UIHandler {
         String name = inputHandler.inputString();
         this.recordHandler.removeRecord(name);
         this.outputConsole.printSuccessRecordDelete();
+    }
+
+    public void searchRecordByName(){
+        this.outputConsole.printIName();
+        String name = this.inputHandler.inputString();
+        Record record = this.recordHandler.searchRecordByName(name);
+        this.outputConsole.printRecord(record);
     }
 
     public void stopConsole(){
